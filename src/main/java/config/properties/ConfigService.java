@@ -44,16 +44,16 @@ public class ConfigService {
     }
 
     private static void manageAppProperties() {
-        if(System.getProperty("remote") == null || System.getProperty("remote").equals("")) {
+        if (System.getProperty("remote") == null || System.getProperty("remote").equals("")) {
             System.setProperty("remote", appProperties.getProperty(ConfigConstants.REMOTE));
         }
-        if(System.getProperty("os") == null || System.getProperty("os").equals("")) {
+        if (System.getProperty("os") == null || System.getProperty("os").equals("")) {
             System.setProperty("os", appProperties.getProperty(ConfigConstants.OS));
         }
-        if(System.getProperty("browser") == null || System.getProperty("browser").equals("")) {
+        if (System.getProperty("browser") == null || System.getProperty("browser").equals("")) {
             System.setProperty("browser", appProperties.getProperty(ConfigConstants.BROWSER));
         }
-        if(System.getProperty("defaultTimeout") == null || System.getProperty("defaultTimeout").equals("")) {
+        if (System.getProperty("defaultTimeout") == null || System.getProperty("defaultTimeout").equals("")) {
             System.setProperty("defaultTimeout", appProperties.getProperty(ConfigConstants.DEFAULT_TIMEOUT));
         }
     }

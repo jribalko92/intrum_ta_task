@@ -20,7 +20,7 @@ public class RemoteDriverConfig {
     private static RemoteDriverConfig instance;
 
     public static RemoteDriverConfig getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new RemoteDriverConfig();
         }
 
@@ -67,6 +67,6 @@ public class RemoteDriverConfig {
 
     public String getRemoteUrl() {
         //configure correct url, e.g.:
-        return user+accessKey+baseurl;
+        return user + accessKey + baseurl;
     }
 }
