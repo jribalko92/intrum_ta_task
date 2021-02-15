@@ -1,0 +1,11 @@
+.DS_Store
+.gradle
+/build
+.allure
+allure-results/
+lombok.config
+
+### IntelliJ IDEA ###
+out/**
+/.idea
+**/out
