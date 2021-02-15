@@ -26,7 +26,6 @@ ext {
 dependencies {
     compile "io.cucumber:cucumber-guice:${cucumber}"
     compile "io.cucumber:cucumber-java8:${cucumber}"
-    compile "io.cucumber:cucumber-guice:${cucumber}"
     compile "org.seleniumhq.selenium:selenium-java:${selenium}"
     compile "io.github.bonigarcia:webdrivermanager:${webDriver}"
     compile "com.google.inject:guice:${guice}"

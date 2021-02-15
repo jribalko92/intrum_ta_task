@@ -15,11 +15,11 @@ public class CommonPageObject extends PageGenerator {
     }
 
     public void clickAcceptAllCookiesButton() {
-        Awaits.waitForButtonToBeClicked(() -> acceptAllCookiesButton.click());
+        Awaits.waitForConditionFulfilled(() -> acceptAllCookiesButton.click());
     }
 
     public void fillInData(WebElement element, String data) {
-        Awaits.waitForElementToBeDisplayed(() -> element.isDisplayed());
+        Awaits.waitForConditionFulfilled(() -> element.isDisplayed());
         element.sendKeys(data);
     }
 }
