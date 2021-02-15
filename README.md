@@ -1,14 +1,14 @@
 # Test automation solution for website testing
 
-###Overall information
+## Overall information
 This framework is written in Java. It implements particular website acceptance tests, written using [Gherkin] syntax, that can be executed in different ways: 
 * in different browsers; _(currently have support for Chrome and Firefox only)_
 * on different operating systems; _(initial configuration done, should be completed based on project needs)_
 * both remotely and locally; _(initial configuration done, should be completed based on remote tool configuration)_
 
-PageObject and PageFactory design patterns are used to ...
+PageObject design patterns is used to enhance test maintenance and reduce code duplication. It is used together with PageFactory concept for page objects initialization.
 
-###Dependencies
+## Dependencies
 
 * [Selenium] - Test automation framework
 * [Cucumber] - Tool for specification implementation
@@ -20,7 +20,7 @@ PageObject and PageFactory design patterns are used to ...
 * [Awaitility] - DSL for expressing expectations  operations of an asynchronous system
 * [Gradle] - build automation system
 
-###Structure
+## Structure
 
 * properties - application, different accesses and url properties
 * src/main/java
@@ -39,7 +39,7 @@ PageObject and PageFactory design patterns are used to ...
     * src/test/java/TestRunner.java - class for tests execution
 * src/test/resources/features - feature files with scenarios
 
-###Configuration
+## Configuration
 In order to use framework you need to:
 * Install Lombok Plugin
 ```
@@ -60,10 +60,10 @@ Annotation Processors ->
 Check "Enable annotation processing"
 ```
 
-### Execution
+## Execution
 There are few options for test execution. Please find more detailed info foe each option below.
 
-#### Commandline
+### Commandline
 
 To run tests from commandline, execute command from projects root directory:
 
@@ -77,11 +77,12 @@ There is also possibility to change different parameters for test execution:
 
 * Cucumber tags (e.g. `./gradlew runTests -DdefaultTimeout=5 -Dcucumber.tags="@ContactForm" -Dcourgette.rerunAttempts=2`)
 
-#### Test Runner
+### Test Runner
 
 You can also execute tests using Test Runner that is located at `src/test/java/TestRunner.java`.
+_NOTE: Courgette runs each test in a separate JVM so debugging is not possible. You will need to use the Cucumber IDE plugin and execute scenario directly from feature file to enable debug._ 
 
-### Reporting
+## Reporting
 
 After tests execution report is created in repo: `build/courgette-report`.
 
