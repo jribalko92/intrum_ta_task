@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '5.3.0'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    cucumber = '6.9.1'
+    selenium = '3.141.59'
+    webDriver = '3.7.1'
+    junit = '5.7.0'
+    guice = '4.2.3'
+    await = '4.0.3'
+    openCsv = '5.3'
+    courgette = '5.9.2'
+    allure = '2.13.8'
+}
+
+
+dependencies {
+    compile "io.cucumber:cucumber-guice:${cucumber}"
+    compile "io.cucumber:cucumber-java8:${cucumber}"
+    compile "io.cucumber:cucumber-guice:${cucumber}"
+    compile "org.seleniumhq.selenium:selenium-java:${selenium}"
+    compile "io.github.bonigarcia:webdrivermanager:${webDriver}"
+    compile "com.google.inject:guice:${guice}"
+    compile "org.awaitility:awaitility:${await}"
+    compile "com.opencsv:opencsv:${openCsv}"
+    compile "io.github.prashant-ramcharan:courgette-jvm:${courgette}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junit}"
+    testImplementation "io.cucumber:cucumber-junit:${cucumber}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junit}"
+    testCompile "io.qameta.allure:allure-cucumber6-jvm:${allure}"
+}
+
+tasks.withType(Test) {
+
+}
+
+task runTests(type: Test) {
+    include '**/TestRunner.class'
+    systemProperties = System.getProperties()
+    systemProperty 'remote', System.getProperty('remote')
+    systemProperty 'browser', System.getProperty('browser')
+    systemProperty 'os', System.getProperty('os')
+    systemProperty 'defaultTimeout', System.getProperty('defaultTimeout')
+}
