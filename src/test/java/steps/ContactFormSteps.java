@@ -12,7 +12,8 @@ import utils.dictionaries.LVDictionary;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ContactFormSteps implements En {
 
@@ -122,7 +123,7 @@ public class ContactFormSteps implements En {
             contactFormList.setContactFormList(CsvHelper.getContactFormDataFormFromCsv(fileName));
         });
         And("^I insert data from (\\d+) row into fields in Contract Form$", (Integer row) -> {
-            contactFormObject.fillInContactFormFields(contactFormList.getContactFormList().get(row-1));
+            contactFormObject.fillInContactFormFields(contactFormList.getContactFormList().get(row - 1));
         });
         And("^I submit data in Contract Form$", () -> {
             contactFormObject.clickSubmitButton();
@@ -143,42 +144,42 @@ public class ContactFormSteps implements En {
             List<ContactFormErrors> errors = errorsData.asList(ContactFormErrors.class);
 
             for (ContactFormErrors error : errors) {
-                if(!error.getNameSurname().isEmpty()) {
+                if (!error.getNameSurname().isEmpty()) {
                     assertTrue(contactFormObject.isNameSurnameErrorDisplayed());
                     assertEquals(contactFormObject.nameSurnameError.getText(), dictionary.getDictionaryValue(error.getNameSurname()));
                 }
 
-                if(!error.getSsn().isEmpty()) {
+                if (!error.getSsn().isEmpty()) {
                     assertTrue(contactFormObject.ssnError.isDisplayed());
                     assertEquals(contactFormObject.ssnError.getText(), dictionary.getDictionaryValue(error.getSsn()));
                 }
 
-                if(!error.getCaseNumber().isEmpty()) {
+                if (!error.getCaseNumber().isEmpty()) {
                     assertTrue(contactFormObject.caseNumError.isDisplayed());
                     assertEquals(contactFormObject.caseNumError.getText(), dictionary.getDictionaryValue(error.getCaseNumber()));
                 }
 
-                if(!error.getPhone().isEmpty()) {
+                if (!error.getPhone().isEmpty()) {
                     assertTrue(contactFormObject.phoneError.isDisplayed());
                     assertEquals(contactFormObject.phoneError.getText(), dictionary.getDictionaryValue(error.getPhone()));
                 }
 
-                if(!error.getEmail().isEmpty()) {
+                if (!error.getEmail().isEmpty()) {
                     assertTrue(contactFormObject.emailError.isDisplayed());
                     assertEquals(contactFormObject.emailError.getText(), dictionary.getDictionaryValue(error.getEmail()));
                 }
 
-                if(!error.getAddress().isEmpty()) {
+                if (!error.getAddress().isEmpty()) {
                     assertTrue(contactFormObject.addressError.isDisplayed());
                     assertEquals(contactFormObject.addressError.getText(), dictionary.getDictionaryValue(error.getAddress()));
                 }
 
-                if(!error.getComment().isEmpty()) {
+                if (!error.getComment().isEmpty()) {
                     assertTrue(contactFormObject.commentError.isDisplayed());
                     assertEquals(contactFormObject.commentError.getText(), dictionary.getDictionaryValue(error.getComment()));
                 }
 
-                if(!error.getReply().isEmpty()) {
+                if (!error.getReply().isEmpty()) {
                     assertTrue(contactFormObject.replyError.isDisplayed());
                     assertEquals(contactFormObject.replyError.getText(), dictionary.getDictionaryValue(error.getReply()));
                 }

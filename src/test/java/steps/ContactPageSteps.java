@@ -2,7 +2,6 @@ package steps;
 
 import com.google.inject.Inject;
 import io.cucumber.java8.En;
-import pageObjects.ContactFormObject;
 import pageObjects.ContactPageObject;
 
 public class ContactPageSteps implements En {
