@@ -14,4 +14,10 @@ public class ScenarioHelper {
             scenario.attach(screenshot.getScreenshotAs(OutputType.BYTES), "image/png", scenario.getName());
         }
     }
+
+    public static void endSession(){
+        WebDriverFactory.driver.manage().deleteAllCookies();
+        WebDriverFactory.driver.quit();
+        WebDriverFactory.instance = null;
+    }
 }

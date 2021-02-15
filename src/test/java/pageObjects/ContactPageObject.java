@@ -15,6 +15,7 @@ public class ContactPageObject extends PageGenerator {
     }
 
     public void clickOpenContactFormButton() {
-        Awaits.waitForConditionFulfilled(() -> openContactFormButton.click());
+        Awaits.waitForConditionFulfilled(() -> openContactFormButton.isDisplayed() && openContactFormButton.isEnabled());
+        openContactFormButton.click();
     }
 }

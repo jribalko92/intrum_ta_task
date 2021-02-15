@@ -10,13 +10,16 @@ public class ScenarioHooks implements En {
     public ScenarioHooks() {
         Before((Scenario scenario) -> {
             WebDriverFactory.getInstance();
+
+            Runtime.getRuntime().addShutdownHook(new Thread() {
+                public void run() {
+                    ScenarioHelper.endSession();
+                }
+            });
         });
         After((Scenario scenario) -> {
             ScenarioHelper.attachScreenshot(scenario);
-            WebDriverFactory.driver.manage().deleteAllCookies();
-            WebDriverFactory.driver.quit();
-            WebDriverFactory.instance = null;
+            ScenarioHelper.endSession();
         });
-
     }
 }

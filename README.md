@@ -19,6 +19,7 @@ PageObject design patterns is used to enhance test maintenance and reduce code d
 * [Google Guice] - DI framework
 * [Awaitility] - DSL for expressing expectations  operations of an asynchronous system
 * [Gradle] - build automation system
+* JDK 11 - this implementation was done with JDK 11 version
 
 ## Structure
 
