@@ -19,9 +19,7 @@ ext {
     await = '4.0.3'
     openCsv = '5.3'
     courgette = '5.9.2'
-    allure = '2.13.8'
 }
-
 
 dependencies {
     compile "io.cucumber:cucumber-guice:${cucumber}"
@@ -35,11 +33,6 @@ dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junit}"
     testImplementation "io.cucumber:cucumber-junit:${cucumber}"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junit}"
-    testCompile "io.qameta.allure:allure-cucumber6-jvm:${allure}"
-}
-
-tasks.withType(Test) {
-
 }
 
 task runTests(type: Test) {

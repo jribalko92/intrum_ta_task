@@ -19,8 +19,7 @@ import org.junit.runner.RunWith;
                         "pretty",
                         "json:build/cucumber-report/cucumber.json",
                         "html:build/cucumber-report/cucumber.html",
-                        "junit:build/cucumber-report/cucumber.xml",
-                        "io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm"}
+                        "junit:build/cucumber-report/cucumber.xml"}
         ))
 public class TestRunner {
 }
